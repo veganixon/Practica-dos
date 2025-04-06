@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Champions League</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Exo+2:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <img src="img/champions-league-logo.png" alt="Champions League Logo" class="logo">
+                <h1>Champions League</h1>
+            </div>
+        </header>
+
+        <main>
+            <section class="setup-section">
+                <h2>Configuración del Torneo</h2>
+                <div class="form-group">
+                    <label for="tournament-format">Formato del Torneo:</label>
+                    <select id="tournament-format" class="form-control">
+                        <option value="16">16 equipos (Octavos de final)</option>
+                        <option value="8">8 equipos (Cuartos de final)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="starting-round">Ronda Inicial:</label>
+                    <select id="starting-round" class="form-control">
+                        <option value="round16">Octavos de final</option>
+                        <option value="round8">Cuartos de final</option>
+                    </select>
+                </div>
+
+                <div class="form-group teams-input">
+                    <label>Ingresa los equipos (separados por comas):</label>
+                    <textarea id="teams-list" class="form-control" rows="4" placeholder="Ej: Real Madrid, Barcelona, Bayern Munich, Manchester City..."></textarea>
+                </div>
+
+                <div class="button-group">
+                    <button id="generate-bracket" class="btn btn-primary">Generar Llaves</button>
+                    <button id="reset-app" class="btn btn-danger">Resetear Todo</button>
+                </div>
+            </section>
+
+            <section class="bracket-section">
+                <h2>Llaves del Torneo</h2>
+                <div id="bracket-container" class="bracket-container"></div>
+                <div class="simulate-group">
+                    <button id="simulate-round" class="btn btn-simulate" disabled>Simular Ronda</button>
+                    <button id="simulate-all" class="btn btn-simulate" disabled>Simular Todo</button>
+                </div>
+            </section>
+
+            <section id="winner-section" class="winner-section hidden">
+                <h2>¡Campeón!</h2>
+                <div id="champion-container" class="champion-container"></div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Champions League</p>
+        </footer>
+    </div>
+
+    <script src="js/storage.js"></script>
+    <script src="js/tournament.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
